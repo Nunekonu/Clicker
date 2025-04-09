@@ -4,18 +4,18 @@ extends Control
 
 @export
 var label : Label
-
+var gold : int = 0
 
 func _ready() -> void:
 	update_label()
 
 
 func update_label() -> void:
-	label.text = "Gold : %s" %Game.ref.data.gold
+	label.text = str(gold)
 
 
 func increase_clicks() -> void:
-	Game.ref.data.gold += 1
+	gold += 1
 	update_label()
 
 
