@@ -21,3 +21,12 @@ func increase_clicks() -> void:
 
 func _on_button_pressed() -> void:
 	increase_clicks()
+
+
+func increase_clicks1() -> void:
+	gold += 2
+	update_label()
+
+
+func _on_upgrade_1_pressed() -> void:
+	increase_clicks1()
