@@ -40,4 +40,13 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Click!"
 
+[node name="Upgrade 1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 891.0
+offset_top = 80.0
+offset_right = 1099.0
+offset_bottom = 142.0
+text = "click more!"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Upgrade 1" to="." method="_on_upgrade_1_pressed"]
