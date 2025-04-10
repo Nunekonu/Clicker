@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1744252281
+spritesheet.png::CompressedTexture2D::9137650739314389100::1744252258::1744252282::1::::<><><>0<>0<>8db7b3eadbb66ec125ca179239f33b48<>res://.godot/imported/spritesheet.png-59f7dfdebfc035c80a63445e3bd8a9bd.ctex::
+::res://Clicker-Game-main/::1744252258
+::res://scenes/::1744252258
+::res://scenes/clicker_prototype/::1744252258
+clicker_prototype.gd::GDScript::2653302504930083446::1744252258::0::1::::ClickerPrototype<>Control<><>0<>0<><>::
+clicker_prototype.tscn::PackedScene::3239831069061976232::1744252258::0::1::::<><><>0<>0<><>::uid://bd2jrfk7j6n3c::::res://scenes/clicker_prototype/clicker_prototype.gd<>uid://d3gl1jggyfc1i::::res://spritesheet.png
