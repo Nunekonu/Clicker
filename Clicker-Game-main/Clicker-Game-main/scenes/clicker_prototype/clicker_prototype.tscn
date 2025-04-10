@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kbd0p")
-label1 = NodePath("Upgrade1/Label1")
+label1 = NodePath("Button/Label")
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(250, 150)
