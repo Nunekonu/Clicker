@@ -137,5 +137,21 @@ grow_horizontal = 2
 grow_vertical = 2
 button_mask = 3
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 897.0
+offset_top = 361.0
+offset_right = 988.0
+offset_bottom = 384.0
+text = "cost:"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 203.0
+offset_right = 230.0
+offset_bottom = 360.0
+
 [connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
