@@ -10,7 +10,7 @@ var power : int = 0
 
 
 var gold : int = 0
-
+var buttonPressed : bool
 
 func _ready() -> void:
 	update_label()
@@ -18,7 +18,8 @@ func _ready() -> void:
 
 
 func update_label() -> void:
-	$Button/Label.text = str(gold)
+	$Label.text = str(gold)
+	
 
 
 
@@ -28,6 +29,7 @@ func increase_clicks() -> void:
 
 
 func _on_button_pressed() -> void:
+	$AnimationPlayer.play("HumanTurningBlue")
 	increase_clicks()
 
 

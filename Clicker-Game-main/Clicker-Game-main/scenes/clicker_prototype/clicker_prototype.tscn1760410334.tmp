@@ -18,18 +18,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.84),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
-}
 
 [sub_resource type="Animation" id="Animation_k87gh"]
 length = 0.001
@@ -44,18 +32,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_odpcq"]
@@ -72,13 +48,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kbd0p")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Sprite2D")
-libraries = {
-&"": SubResource("AnimationLibrary_odpcq")
-}
-speed_scale = 4.0
+power = null
 
 [node name="Upgrade1" type="Button" parent="."]
 layout_mode = 0
@@ -98,27 +68,26 @@ text = "Power: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(469, 268)
+texture = ExtResource("2_javf1")
+hframes = 34
+
+[node name="Label" type="Label" parent="Sprite2D"]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = -0.124
 anchor_right = 0.5
 anchor_bottom = -0.124
-offset_left = -164.2
-offset_top = 150.352
-offset_right = -56.2
-offset_bottom = 189.352
+offset_left = -202.0
+offset_top = -142.8
+offset_right = -94.0
+offset_bottom = -103.8
 grow_horizontal = 2
 theme_type_variation = &"HeaderLarge"
 text = "Clicks 0"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(469, 268)
-texture = ExtResource("2_javf1")
-hframes = 34
 
 [node name="Button" type="Button" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0)
@@ -136,6 +105,12 @@ offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
 button_mask = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_odpcq")
+}
+speed_scale = 4.0
 
 [connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
