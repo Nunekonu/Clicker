@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bd2jrfk7j6n3c" path="res://scenes/clicker_prototype/clicker_prototype.gd" id="1_kbd0p"]
 
-[node name="ClickerPrototype" type="Control"]
+[node name="ClickerPrototype" type="Control" node_paths=PackedStringArray("label1")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,26 +10,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kbd0p")
+label1 = NodePath("Upgrade1/Label1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(522, 0)
-
-[node name="Button" type="Button" parent="Sprite2D"]
+[node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(250, 150)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = 248.5
-offset_right = 178.5
-offset_bottom = 398.5
+offset_left = -114.5
+offset_top = -61.0
+offset_right = 114.5
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Click!"
 
-[node name="Label" type="Label" parent="Sprite2D/Button"]
+[node name="Label" type="Label" parent="Button"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -60,5 +59,5 @@ text = "Power: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
