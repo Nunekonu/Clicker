@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bd2jrfk7j6n3c" path="res://scenes/clicker_prototype/clicker_prototype.gd" id="1_kbd0p"]
 [ext_resource type="Texture2D" uid="uid://d3gl1jggyfc1i" path="res://spritesheet.png" id="2_javf1"]
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id="Animation_javf1"]
 resource_name = "Hover"
 
@@ -44,6 +45,9 @@ _data = {
 }
 
 [node name="ClickerPrototype" type="Control"]
+=======
+[node name="ClickerPrototype" type="Control" node_paths=PackedStringArray("label")]
+>>>>>>> parent of 04cd25e (upgrade button marche peut etre)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,6 +59,22 @@ offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kbd0p")
+<<<<<<< HEAD
+=======
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_right = 54.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+text = "Clicks: 0"
+>>>>>>> parent of 04cd25e (upgrade button marche peut etre)
 
 <<<<<<< Updated upstream
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -89,6 +109,7 @@ text = "Clicks: 0"
 visible_characters_behavior = 2
 >>>>>>> Stashed changes
 
+<<<<<<< HEAD
 [node name="Label" type="Label" parent="Sprite2D/Button"]
 layout_mode = 1
 anchors_preset = 5
@@ -104,23 +125,17 @@ text = "Clicks: 0"
 
 <<<<<<< Updated upstream
 [node name="Upgrade1" type="Button" parent="."]
+=======
+[node name="Upgrade 1" type="Button" parent="."]
+>>>>>>> parent of 04cd25e (upgrade button marche peut etre)
 layout_mode = 0
-offset_left = 892.0
-offset_top = 304.0
-offset_right = 1082.0
-offset_bottom = 365.0
+offset_left = 891.0
+offset_top = 80.0
+offset_right = 1099.0
+offset_bottom = 142.0
+text = "click more!"
 
-[node name="Label1" type="Label" parent="Upgrade1"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = -60.0
-offset_right = 148.0
-offset_bottom = 16.0
-theme_type_variation = &"HeaderLarge"
-text = "Power: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
+<<<<<<< HEAD
 [connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
 =======
@@ -152,3 +167,7 @@ flat = true
 [connection signal="pressed" from="Upgrade 1" to="." method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
 >>>>>>> Stashed changes
+=======
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Upgrade 1" to="." method="_on_upgrade_1_pressed"]
+>>>>>>> parent of 04cd25e (upgrade button marche peut etre)
