@@ -31,7 +31,7 @@ func _on_button_pressed() -> void:
 
 
 func update_label1() -> void:
-	$Upgrade1/Label1.text = str(power)
+	$Upgrade1/Label1.text = str(power + 1)
 
 
 func _on_upgrade_1_pressed() -> void:
