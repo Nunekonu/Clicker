@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bd2jrfk7j6n3c" path="res://scenes/clicker_prototype/clicker_prototype.gd" id="1_kbd0p"]
 
-[node name="ClickerPrototype" type="Control" node_paths=PackedStringArray("label1")]
+[node name="ClickerPrototype" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +10,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kbd0p")
-label1 = NodePath("Button/Label")
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(250, 150)
