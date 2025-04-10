@@ -5,10 +5,10 @@ extends Control
 @export
 
 
-var label1 : Label
+
 var power : int = 0
 
-var label : Label
+
 var gold : int = 0
 
 
@@ -18,7 +18,7 @@ func _ready() -> void:
 
 
 func update_label() -> void:
-	label.text = str(gold)
+	$Button/Label.text = str(gold)
 
 
 
@@ -32,7 +32,7 @@ func _on_button_pressed() -> void:
 
 
 func update_label1() -> void:
-	label1.text = str(power)
+	$Upgrade1/Label1.text = str(power)
 
 
 func _on_upgrade_1_pressed() -> void:
