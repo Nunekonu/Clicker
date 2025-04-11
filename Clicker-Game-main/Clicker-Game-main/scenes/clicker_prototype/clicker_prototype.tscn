@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bd2jrfk7j6n3c" path="res://scenes/clicker_prototype/clicker_prototype.gd" id="1_kbd0p"]
 [ext_resource type="Texture2D" uid="uid://doruum8uvib1j" path="res://spritesheet.png" id="2_javf1"]
+[ext_resource type="PackedScene" uid="uid://cel0bgx2ku2sx" path="res://scenes/clicker_prototype/blue_guy.tscn" id="3_k87gh"]
 
 [sub_resource type="Animation" id="Animation_javf1"]
 resource_name = "HumanTurningBlue"
@@ -58,11 +59,78 @@ tracks/1/keys = {
 "values": [Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_odpcq"]
+resource_name = "Truc_qui_glisse"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_odpcq"]
 _data = {
 &"HumanTurningBlue": SubResource("Animation_javf1"),
-&"RESET": SubResource("Animation_k87gh")
+&"RESET": SubResource("Animation_k87gh"),
+&"Truc_qui_glisse": SubResource("Animation_odpcq")
 }
+
+[sub_resource type="Animation" id="Animation_s8nij"]
+resource_name = "Truc_qui_glisse"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("boutton_qui_glisse:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 35), Vector2(193, 35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("boutton_qui_glisse/Panneaux/Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-95, 51), Vector2(95, 51)]
+}
+
+[sub_resource type="Animation" id="Animation_2lbfi"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("boutton_qui_glisse:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("boutton_qui_glisse/Panneaux/Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-95, 51)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lbfi"]
+_data = {
+&"RESET": SubResource("Animation_2lbfi"),
+&"Truc_qui_glisse": SubResource("Animation_s8nij")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rk2o6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_odpcq"]
 
 [node name="ClickerPrototype" type="Control"]
 layout_mode = 3
@@ -145,6 +213,97 @@ offset_right = 988.0
 offset_bottom = 384.0
 text = "cost:"
 
+<<<<<<< HEAD
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
+=======
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2lbfi")
+}
+speed_scale = 2.0
+
+[node name="boutton_qui_glisse" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 110.0
+offset_bottom = 75.0
+
+[node name="Panneaux" type="Sprite2D" parent="boutton_qui_glisse"]
+modulate = Color(0, 0, 0.407843, 1)
+position = Vector2(-98.25, 288.75)
+scale = Vector2(193.5, 648.5)
+texture = SubResource("CanvasTexture_rk2o6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="boutton_qui_glisse/Panneaux"]
+modulate = Color(0.0156863, 0.501961, 1, 1)
+top_level = true
+position = Vector2(-95, 51)
+scale = Vector2(166, 92)
+texture = SubResource("CanvasTexture_odpcq")
+
+[node name="BlueGuy" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(-0.273042, -0.0393769)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="BlueGuy2" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(-0.214759, -0.03382)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="BlueGuy3" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(-0.130422, -0.0338203)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="BlueGuy4" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(-0.0521085, -0.0229508)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="BlueGuy5" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(0.0262048, -0.03382)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="BlueGuy6" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(0.0864457, -0.03382)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="BlueGuy7" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(0.134639, -0.03382)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="BlueGuy8" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(0.19488, -0.0229504)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="BlueGuy9" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(0.285241, -0.0229504)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="BlueGuy10" parent="boutton_qui_glisse/Panneaux/Sprite2D2" instance=ExtResource("3_k87gh")]
+visible = false
+position = Vector2(0.337349, -0.0326086)
+scale = Vector2(0.00131225, 0.00234618)
+
+[node name="Label3" type="Label" parent="boutton_qui_glisse"]
+layout_mode = 0
+offset_left = -180.0
+offset_top = 70.0
+offset_right = -24.0
+offset_bottom = 123.0
+text = "Number of humans:"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="boutton_qui_glisse" to="." method="_on_boutton_qui_glisse_pressed"]
+>>>>>>> UI

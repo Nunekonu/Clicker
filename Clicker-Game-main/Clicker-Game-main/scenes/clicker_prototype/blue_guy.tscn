@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cel0bgx2ku2sx"]
+
+[ext_resource type="Texture2D" uid="uid://doruum8uvib1j" path="res://spritesheet.png" id="1_1mh21"]
+
+[node name="BlueGuy" type="Sprite2D"]
+scale = Vector2(0.269, 0.25)
+texture = ExtResource("1_1mh21")
+hframes = 34
+frame = 33
