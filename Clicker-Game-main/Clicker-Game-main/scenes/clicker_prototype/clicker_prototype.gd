@@ -19,7 +19,7 @@ func update_label() -> void:
 
 
 func update_label2() -> void:
-	$Label2.text = str(10 + (power ** 2))
+	$Label2.text = str(round(10 + (power ** log(10))))
 
 
 func increase_clicks() -> void:
@@ -38,21 +38,16 @@ func update_label1() -> void:
 
 
 func _on_upgrade_1_pressed() -> void:
-	if gold >= 10 + power ** 2:
+	if gold >= 10 + power ** log(10):
 		increase_clicks1()
 		update_label2()
 
 
 func increase_clicks1() -> void:
-	gold -= 10 + power ** 2
+	gold -= 10 + power ** log(10)
 	power += 1
 	update_label1()
 	update_label()
-<<<<<<< HEAD
-	
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	$Sprite2D.set_frame(0)
-=======
 
 
 
@@ -127,4 +122,3 @@ func popBlue() -> void:
 	else:
 		$boutton_qui_glisse/Panneaux/Sprite2D2/BlueGuy10.visible = false
 		
->>>>>>> UI
