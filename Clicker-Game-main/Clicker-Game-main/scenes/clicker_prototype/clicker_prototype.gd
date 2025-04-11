@@ -19,7 +19,7 @@ func update_label() -> void:
 
 
 func update_label2() -> void:
-	$Label2.text = str(10 + (power ** 2))
+	$Label2.text = str(round(10 + (power ** log(10))))
 
 
 func increase_clicks() -> void:
@@ -38,13 +38,13 @@ func update_label1() -> void:
 
 
 func _on_upgrade_1_pressed() -> void:
-	if gold >= 10 + power ** 2:
+	if gold >= 10 + power ** log(10):
 		increase_clicks1()
 		update_label2()
 
 
 func increase_clicks1() -> void:
-	gold -= 10 + power ** 2
+	gold -= 10 + power ** log(10)
 	power += 1
 	update_label1()
 	update_label()
@@ -68,6 +68,8 @@ func _on_boutton_qui_glisse_pressed() -> void:
 func popBlue() -> void:
 	var gold1 = gold
 	var yes = gold/10
+	
+	$boutton_qui_glisse/Label3.text = "Number of humans: " + str(yes)
 	
 	if yes >= 1 :
 		$boutton_qui_glisse/Panneaux/Sprite2D2/BlueGuy.visible = true

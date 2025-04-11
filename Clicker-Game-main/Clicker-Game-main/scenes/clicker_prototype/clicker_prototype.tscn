@@ -289,6 +289,14 @@ visible = false
 position = Vector2(0.337349, -0.0326086)
 scale = Vector2(0.00131225, 0.00234618)
 
+[node name="Label3" type="Label" parent="boutton_qui_glisse"]
+layout_mode = 0
+offset_left = -180.0
+offset_top = 70.0
+offset_right = -24.0
+offset_bottom = 123.0
+text = "Number of humans:"
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
