@@ -45,8 +45,6 @@ func increase_clicks1() -> void:
 	power += 1
 	update_label1()
 	update_label()
-
-
-func _on_button_3_pressed() -> void:
-	gold += 1
-	update_label()
+	
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	$Sprite2D.set_frame(0)
